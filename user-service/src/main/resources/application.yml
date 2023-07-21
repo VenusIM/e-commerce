@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: user-service
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
 
 eureka:
   instance:
@@ -12,4 +18,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://127.0.0.1:8761
+      defaultZone: http://127.0.0.1:8761/eureka
