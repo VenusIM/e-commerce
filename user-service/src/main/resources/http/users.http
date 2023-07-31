@@ -1,0 +1,9 @@
+POST localhost:49593/users
+Content-Type: application/json
+
+{
+  "email": "yim3370@gmail.com",
+  "password": "test1234",
+  "name" : "임준희",
+  "userId" : "yim3370"
+}

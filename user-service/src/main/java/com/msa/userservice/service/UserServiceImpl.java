@@ -19,10 +19,15 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDTO createUser(UserDTO userDTO) {
         userDTO.setUserId(UUID.randomUUID().toString());
+
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
         userEntity.setEncryptedPassword("encrypted-Password");
-        return null;
+
+        userEntity = userRepository.save(userEntity);
+        userDTO = modelMapper.map(userEntity, UserDTO.class);
+
+        return userDTO;
     }
 }

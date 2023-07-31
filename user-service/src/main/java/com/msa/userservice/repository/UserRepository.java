@@ -1,8 +1,8 @@
 package com.msa.userservice.repository;
 
-import com.msa.userservice.dto.UserDTO;
+import com.msa.userservice.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<UserDTO, Long> {
+public interface UserRepository extends CrudRepository<UserEntity, Long> {
 
 }
