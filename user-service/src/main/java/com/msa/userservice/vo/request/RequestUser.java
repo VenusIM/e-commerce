@@ -1,4 +1,4 @@
-package com.msa.userservice.vo;
+package com.msa.userservice.vo.request;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -18,5 +18,4 @@ public class RequestUser {
     @NotBlank(message = "Password cannot be null")
     @Min(value = 8, message = "Password must be equal or gather then eight characters")
     private String password;
-
 }

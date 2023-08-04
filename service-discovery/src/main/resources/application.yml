@@ -5,6 +5,7 @@ server:
 spring:
   application:
     name: service-discovery
+  cloud.
 
 # Eureka register
 eureka:
