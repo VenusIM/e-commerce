@@ -3,10 +3,10 @@ server:
 
 spring:
   application:
-    name: user-service
+    name: catalog-service
   h2:
     console:
-      path: /user-service/h2-console
+      path: /catalog-service/h2-console
       enabled: true
       settings:
         web-allow-others: true
@@ -29,3 +29,7 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
+
+logging:
+  level:
+    com.msa.catalogservice : DEBUG

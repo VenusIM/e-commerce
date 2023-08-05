@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService{
 
         List<ResponseUser> orders = new ArrayList<>();
         userDTO.setOrders(orders);
-        return null;
+        return userDTO;
     }
 
     @Override

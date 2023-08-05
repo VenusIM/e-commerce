@@ -21,4 +21,8 @@ Content-Type: application/json
 ### Get All User
 GET localhost:8000/user-service/users
 
+### Get User By Id
+GET localhost:8000/user-service/users/f64aec53-7ec0-4ee2-bb38-0259cc004493
+
+
 
