@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user-service")
+//@RequestMapping("/user-service") API Gateway 에서 pattern 을 변경해 줌으로서 필요 없어짐
 @RequiredArgsConstructor
 public class UserController {
 
