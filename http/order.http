@@ -1,4 +1,4 @@
-### user2
+### Create Order
 POST localhost:8000/order-service/b730e740-2106-420c-b399-0799fa8f5c77/orders
 Content-Type: application/json
 
@@ -7,3 +7,6 @@ Content-Type: application/json
   "quantity": 10,
   "unitPrice" : 1500
 }
+
+### Order List
+GET localhost:8000/order-service/b730e740-2106-420c-b399-0799fa8f5c77/orders

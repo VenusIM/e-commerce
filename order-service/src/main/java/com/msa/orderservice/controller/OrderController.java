@@ -33,6 +33,7 @@ public class OrderController {
     public ResponseEntity<ResponseOrder> createOrder(@PathVariable("userId") String userId, @RequestBody RequestOrder requestOrder) {
 
         OrderDTO orderDTO = httpMapper.toDTO(requestOrder);
+        orderDTO.setUserId(userId);
         orderDTO = orderService.createOrder(orderDTO);
 
         ResponseOrder responseUser = httpMapper.toResponse(orderDTO);
