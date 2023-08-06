@@ -12,7 +12,7 @@ spring:
         web-allow-others: true
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:~/test
+    url: jdbc:h2:~/user-service
     username: sa
     password:
   jpa:

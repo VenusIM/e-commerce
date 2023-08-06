@@ -1,0 +1,2 @@
+### Get All Catalogs
+GET localhost:8000/catalog-service/catalogs
