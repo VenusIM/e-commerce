@@ -19,11 +19,13 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
     defer-datasource-initialization: true
+    open-in-view: false
   sql:
     init:
       data-locations: classpath:data.sql
+      mode: always
 
 eureka:
   instance:

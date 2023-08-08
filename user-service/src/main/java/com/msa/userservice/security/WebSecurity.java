@@ -43,18 +43,18 @@ public class WebSecurity {
         httpSecurity.cors().and().csrf().disable()
                 .headers().frameOptions().disable();
 
-        httpSecurity.authorizeHttpRequests(authorize -> {
-            try {
-                authorize.requestMatchers(mvc.pattern("/**")).permitAll()
-                        .requestMatchers(PathRequest.toH2Console()).permitAll()
-                        .requestMatchers(new IpAddressMatcher("127.0.0.1")).permitAll()
-                        .and()
-                        .addFilter(getAuthenticationFilter());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        });
+//        httpSecurity.authorizeHttpRequests(authorize -> {
+//            try {
+//                authorize.requestMatchers(mvc.pattern("/**")).permitAll()
+//                        .requestMatchers(PathRequest.toH2Console()).permitAll()
+//                        .requestMatchers(new IpAddressMatcher("127.0.0.1")).permitAll()
+//                        .and()
+//                        .addFilter(getAuthenticationFilter());
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//
+//        });
 
         return httpSecurity.build();
     }

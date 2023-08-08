@@ -1,3 +1,13 @@
+### login
+POST localhost:8000/user-service/login
+Content-Type: application/json
+
+{
+  "email": "yim3370@gmail.com",
+  "password": "test1234"
+
+}
+
 ### user1
 POST localhost:8000/user-service/users
 Content-Type: application/json
