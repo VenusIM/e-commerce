@@ -83,6 +83,6 @@ public class UserServiceImpl implements UserService{
                 true,
                 true,
                 true,
-                Collections.EMPTY_LIST);
+                new ArrayList<>());
     }
 }

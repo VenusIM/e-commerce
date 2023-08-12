@@ -1,8 +1,6 @@
 package com.msa.userservice.dto;
 
 import com.msa.userservice.vo.response.ResponseUser;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

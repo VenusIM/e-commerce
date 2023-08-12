@@ -12,6 +12,5 @@ import org.springframework.stereotype.Component;
 @Component
 public interface HttpMapper {
     UserDTO toDTO(RequestUser requestUser);
-    UserDTO toDTO(RequestLogin requestLogin);
     ResponseUser toResponse(UserDTO userDTO);
 }
