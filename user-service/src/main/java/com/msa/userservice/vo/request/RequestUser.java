@@ -3,8 +3,11 @@ package com.msa.userservice.vo.request;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class RequestUser {
 
     @NotBlank(message = "Email cannot be null")

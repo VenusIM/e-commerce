@@ -31,3 +31,11 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
+
+logging:
+  level:
+    com.msa.userservice: DEBUG
+
+token:
+  expiration-time: 60000 #1분
+  secret-key: 01234567890123456789012345678901234567890123456789

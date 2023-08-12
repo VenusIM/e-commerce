@@ -58,9 +58,20 @@ public class UserServiceImpl implements UserService{
     public Iterable<UserDTO> getUserByAll() {
         Iterable<UserEntity> userList = userRepository.findAll();
 
-        List<UserDTO> result = Collections.EMPTY_LIST;
+        List<UserDTO> result = new ArrayList<>();
         userList.forEach(entity -> result.add(userMapper.toDTO(entity)));
         return result;
+    }
+
+    @Override
+    public UserDTO getUserDetailByEmail(String email) {
+        UserEntity userEntity = userRepository.findByEmail(email);
+
+        if(userEntity == null) {
+            throw new UsernameNotFoundException(email);
+        }
+
+        return userMapper.toDTO(userEntity);
     }
 
     @Override

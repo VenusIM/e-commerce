@@ -17,7 +17,7 @@ spring:
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/user-service/users
+            - Path=/user-service/users, /user-service/login
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
@@ -42,17 +42,6 @@ spring:
                 baseMessage: Spring Cloud Gateway logging filter
                 preLogger: true
                 postLogger: true
-#        - id: user-service
-#          uri : lb://USER-SERVICE
-#          predicates:
-#            - Path=/user-service/**
-#          filters:
-#            - name : CustomFilter
-#            - name : LoggingFilter
-#              args :
-#                baseMessage: Spring Cloud Gateway logging filter
-#                preLogger: true
-#                postLogger: true
         - id: catalog-service
           uri: lb://CATALOG-SERVICE
           predicates:

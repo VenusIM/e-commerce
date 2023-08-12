@@ -10,4 +10,6 @@ public interface UserService extends UserDetailsService {
     UserDTO getUserByUserId(String userId);
 
     Iterable<UserDTO> getUserByAll();
+
+    UserDTO getUserDetailByEmail(String userName);
 }
