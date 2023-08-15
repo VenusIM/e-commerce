@@ -7,15 +7,17 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/VenusIM/e-commerce.git/yaml
+          uri: https://github.com/VenusIM/e-commerce.git
+          search-paths: /yaml/**
+          default-label: main
+  #        native:
+  #          search-locations:
 
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
-#        native:
-#          search-locations:
 management:
   endpoints:
     web:

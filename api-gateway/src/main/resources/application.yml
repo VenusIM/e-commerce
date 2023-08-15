@@ -99,5 +99,5 @@ management:
       exposure:
         include: health, busrefresh
 
-token:
-  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
+#token:
+#  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
