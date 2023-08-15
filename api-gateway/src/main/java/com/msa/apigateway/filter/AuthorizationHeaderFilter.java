@@ -1,8 +1,6 @@
 package com.msa.apigateway.filter;
 
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.Decoders;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
@@ -55,7 +53,7 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory<Auth
     private boolean isJwtValid(String jwt) {
         boolean result = true;
         String subject = Jwts.parserBuilder()
-                .setSigningKey(environment.getProperty("token.secretKey").getBytes())
+                .setSigningKey(environment.getProperty("token.secretKey", "").getBytes())
                 .build()
                 .parseClaimsJwt(jwt)
                 .getBody()

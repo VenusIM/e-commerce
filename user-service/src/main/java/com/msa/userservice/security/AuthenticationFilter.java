@@ -6,7 +6,6 @@ import com.msa.userservice.service.UserService;
 import com.msa.userservice.vo.request.RequestLogin;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.HttpServletRequest;
@@ -63,7 +62,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                                 .setExpiration(new Date(System.currentTimeMillis() +
                                         Long.parseLong(environment.getProperty("token.expiration-time"))
                                 ))
-                                .signWith(Keys.hmacShaKeyFor(environment.getProperty("token.secret-key").getBytes()), SignatureAlgorithm.HS512)
+                                .signWith(Keys.hmacShaKeyFor(environment.getProperty("token.secret-key", "").getBytes()), SignatureAlgorithm.HS512)
                                 .compact()
                 )
                 .path("/")

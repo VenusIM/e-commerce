@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/VenusIM/e-commerce/yaml
+          uri: https://github.com/VenusIM/e-commerce/
 
   rabbitmq:
     host: localhost
