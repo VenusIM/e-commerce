@@ -1,0 +1,23 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/VenusIM/e-commerce/yaml
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#        native:
+#          search-locations:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh

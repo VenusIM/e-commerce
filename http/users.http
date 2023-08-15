@@ -1,6 +1,8 @@
 ### Health Check
 GET localhost:8000/user-service/health_check
 Content-Type: application/json
+Authorization: token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5OTRiYTE2NC1lMmUyLTRiYjktOWNiYS1kYTkzMTkzZmU1MGYiLCJleHAiOjE2OTE4NTE2MDR9.IsjHaMNs6LaxjZnsoMEJqm0CQ3XGL2lvc8A7eu5KWkHa2bdWM0iU8fdPuyD6MhpylebwDjK4fLI7kmGqflETiA; Path=/; HttpOnly; SameSite=NONE
+Authorization: userId=994ba164-e2e2-4bb9-9cba-da93193fe50f; Path=/; HttpOnly; SameSite=NONE
 
 ### user1
 POST localhost:8000/user-service/users
@@ -35,7 +37,6 @@ Content-Type: application/json
 {
   "email": "yim3370@gmail.com",
   "password": "test1234"
-
 }
 
 

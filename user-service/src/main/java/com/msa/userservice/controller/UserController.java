@@ -1,10 +1,8 @@
 package com.msa.userservice.controller;
 
 import com.msa.userservice.dto.UserDTO;
-import com.msa.userservice.entity.UserEntity;
 import com.msa.userservice.mapper.HttpMapper;
 import com.msa.userservice.service.UserService;
-import com.msa.userservice.vo.request.RequestLogin;
 import com.msa.userservice.vo.request.RequestUser;
 import com.msa.userservice.vo.response.ResponseUser;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +25,11 @@ public class UserController {
 
     @GetMapping("/health_check")
     public String status() {
-        return String.format("It's working in user-service on PORT %s", environment.getProperty("local.server.port"));
+        return "It's working in user-service " +
+                "\n LOCAL SEVER PORT >> " + environment.getProperty("local.server.port") +
+                "\n SEVER PORT >> " + environment.getProperty("server.port") +
+                "\n TOKEN SECRET-KEY >> " + environment.getProperty("token.secret-key") +
+                "\n TOKEN EXPIRATION-TIME >> " + environment.getProperty("token.expiration-time");
     }
 
     @PostMapping("/users")

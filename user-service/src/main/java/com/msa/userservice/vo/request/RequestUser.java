@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
 public class RequestUser {
 
     @NotBlank(message = "Email cannot be null")
@@ -20,4 +18,28 @@ public class RequestUser {
     @NotBlank(message = "Password cannot be null")
     @Min(value = 8, message = "Password must be equal or gather then eight characters")
     private String password;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

@@ -63,7 +63,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                                 .setExpiration(new Date(System.currentTimeMillis() +
                                         Long.parseLong(environment.getProperty("token.expiration-time"))
                                 ))
-                                .signWith(Keys.hmacShaKeyFor(Decoders.BASE64.decode(environment.getProperty("token.secret-key"))), SignatureAlgorithm.HS512)
+                                .signWith(Keys.hmacShaKeyFor(environment.getProperty("token.secret-key").getBytes()), SignatureAlgorithm.HS512)
                                 .compact()
                 )
                 .path("/")
@@ -79,7 +79,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                 .build()
                 .toString();
 
-        response.addHeader(HttpHeaders.SET_COOKIE, tokenCookie);
-        response.addHeader(HttpHeaders.SET_COOKIE, userIdCookie);
+        response.addHeader(HttpHeaders.AUTHORIZATION, tokenCookie);
+        response.addHeader(HttpHeaders.AUTHORIZATION, userIdCookie);
     }
 }

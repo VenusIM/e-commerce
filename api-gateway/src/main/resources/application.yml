@@ -11,6 +11,12 @@ eureka:
 spring:
   application:
     name: api-gateway
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
   cloud:
     gateway:
       routes:
@@ -36,6 +42,22 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - name: AuthorizationHeaderFilter
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Spring Cloud Gateway logging filter
+                preLogger: true
+                postLogger: true
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/actuator/**
+            - Method=GET,POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - name: AuthorizationHeaderFilter
             - name: CustomFilter
             - name: LoggingFilter
               args:
@@ -71,3 +93,11 @@ spring:
             preLogger: true
             postLogger: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
+
+token:
+  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm

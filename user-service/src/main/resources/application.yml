@@ -22,6 +22,11 @@ spring:
     hibernate:
       ddl-auto: create
     open-in-view: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   instance:
@@ -36,6 +41,12 @@ logging:
   level:
     com.msa.userservice: DEBUG
 
-token:
-  expiration-time: 60000 #1분
-  secret-key: 01234567890123456789012345678901234567890123456789
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, bean, health, busrefresh
+
+#token:
+#  expiration-time: 60000 #1분
+#  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
