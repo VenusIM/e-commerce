@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/user-service
+    username: sa
+    password: '{cipher}9baac6cb4ead795be86684e719f3bc4da0c288d675cc87b53301eb09570c71b9'
+
+token:
+  expiration-time: 60000 #1분
+  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
+
+gateway:
+  ip: 127.0.0.1

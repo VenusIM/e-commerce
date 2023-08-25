@@ -1,0 +1,11 @@
+### encrypt
+POST http://localhost:8888/encrypt
+Content-Type: text/plain
+
+1234
+
+### decrypt
+POST http://localhost:8888/decrypt
+Content-Type: text/plain
+
+89e3c57b7699c21683510222e21ceb164f2006ba2b1c230a6966dc21978fb870
