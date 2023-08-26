@@ -1,5 +1,6 @@
 package com.msa.userservice.dto;
 
+import com.msa.userservice.vo.response.ResponseOrder;
 import com.msa.userservice.vo.response.ResponseUser;
 
 import java.io.Serializable;
@@ -14,7 +15,7 @@ public class UserDTO implements Serializable {
 
     private String password;
     private LocalDateTime createdAt;
-    private List<ResponseUser> orders;
+    private List<ResponseOrder> orders;
 
     public String getEmail() {
         return email;
@@ -64,11 +65,11 @@ public class UserDTO implements Serializable {
         this.createdAt = createdAt;
     }
 
-    public List<ResponseUser> getOrders() {
+    public List<ResponseOrder> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<ResponseUser> orders) {
+    public void setOrders(List<ResponseOrder> orders) {
         this.orders = orders;
     }
 }

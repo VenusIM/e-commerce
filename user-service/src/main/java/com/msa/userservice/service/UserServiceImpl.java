@@ -4,13 +4,19 @@ import com.msa.userservice.dto.UserDTO;
 import com.msa.userservice.entity.UserEntity;
 import com.msa.userservice.mapper.UserMapper;
 import com.msa.userservice.repository.UserRepository;
+import com.msa.userservice.vo.response.ResponseOrder;
 import com.msa.userservice.vo.response.ResponseUser;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +26,10 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService{
 
+    private final RestTemplate restTemplate;
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final Environment environment;
 
     // Bean 등록
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -48,7 +56,16 @@ public class UserServiceImpl implements UserService{
             throw new UsernameNotFoundException("User is not found");
         }
 
-        List<ResponseUser> orders = new ArrayList<>();
+//        List<ResponseOrder> orders = new ArrayList<>();
+
+        /* Using as rest template */
+        String orderUrl = String.format(environment.getProperty("order-service.url"),userId);
+        ResponseEntity<List<ResponseOrder>> orderListResponse =
+                restTemplate.exchange(orderUrl, HttpMethod.GET, null,
+                        new ParameterizedTypeReference<List<ResponseOrder>>() {
+                });
+
+        List<ResponseOrder> orders = orderListResponse.getBody();
         userDTO.setOrders(orders);
         return userDTO;
     }
