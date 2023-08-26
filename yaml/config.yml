@@ -1,6 +1,6 @@
 token:
   expiration-time: 60000 #1분
-  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
+  secret-key: '{cipher}AQATeC3lhSo3M4BB/vET8vlkpEJZzUK4MJvTJjoe/ZItzEE3PuzVtRpSGU0ylrQSO7wYuG/xpnMK/EwOUCDSHdyAJja0qqguy9UuZznmv/iGKtR8SO+dquV2hYn7jFXYeamBCAX7fDpwUv/eEmpTL/HJQ/BEVrHGgV5xYCRMNgRGBGalvL4+XE/TyQoL+U7yXOlCb4fernMl0GvYDXekjv65N3o2nFDqF3mop3uIZwMDsqFMiMhMrWgxuotTbw3KPVBYrLX12Swybd/GKFVxZVIPXGe6o0jNEfDD6gPr6Xo672ReOx0AgDaMY7SkOQ252BAZxUpgZ1bUhfOHSvepBS6QocXkFjPKUcYLjOABw/5CQiyLCbLiu6Wsa6SnUEy4GTQPPBWenUygPsoJMEoypVanq5Ty0WHADv/yk9ssgzTEcO6yg1nsKjgR2JTj9JUfqFFzxFkuHY/kyPdaDxxIJslI'
 
 gateway:
   ip: 127.0.0.1

@@ -2,7 +2,7 @@
 POST http://localhost:8888/encrypt
 Content-Type: text/plain
 
-1234
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
 
 ### decrypt
 POST http://localhost:8888/decrypt

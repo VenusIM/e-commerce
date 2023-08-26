@@ -100,4 +100,4 @@ management:
         include: refresh, health, beans, httptrace, busrefresh
 
 #token:
-#  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
+#  secret-key:

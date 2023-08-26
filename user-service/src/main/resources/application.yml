@@ -49,4 +49,4 @@ management:
 
 #token:
 #  expiration-time: 60000 #1분
-#  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
+#  secret-key:

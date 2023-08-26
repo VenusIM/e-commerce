@@ -7,7 +7,7 @@ spring:
 
 token:
   expiration-time: 60000 #1분
-  secret-key: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefhijklm
+  secret-key:
 
 gateway:
   ip: 127.0.0.1
